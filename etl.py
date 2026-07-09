@@ -29,10 +29,3 @@ def calcular_vendas_categorias(dados_processados: dict) -> dict:
         total_de_vendas = sum(int(item['Quantidade']) * int(item['Venda']) for item in itens)
         vendas_por_categoria[categoria] = total_de_vendas
     return vendas_por_categoria
-
-
-dados_brutos = ler_csv(path_arquivo)
-dados_tratados = processar_dados(dados_brutos)
-vendas = calcular_vendas_categorias(dados_tratados)
-
-print(vendas)
